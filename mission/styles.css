@@ -1,0 +1,41 @@
+body {
+    font-family:'Times New Roman', Times, serif; 
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-weight: 450;
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 100px 0 20px 0;
+}
+
+h2 {
+    color: #2a5db0;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight:300
+}
+
+main {
+    font-size: 22px;
+    margin-top: 55px;
+}
+
+ol li {
+    margin-bottom: 40px;
+}
+
+img {
+    width: 180px;
+    display: block;
+    margin: 75px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
