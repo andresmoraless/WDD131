@@ -4,9 +4,10 @@ body {
     margin: 0 auto;
 }
 
-header h1 {
+h1 {
     font-weight: 450;
     font-size: 40px;
+    text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
     margin: 100px 0 20px 0;
@@ -15,6 +16,7 @@ header h1 {
 h2 {
     color: #2a5db0;
     font-size: 17px;
+    text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
     font-weight:300
@@ -35,7 +37,7 @@ img {
     margin: 75px;
 }
 
-.img-container {
+footer {
     display: flex;
     justify-content: center;
 }
