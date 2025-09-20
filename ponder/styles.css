@@ -1,0 +1,37 @@
+body {
+    background-color: lightgrey;
+    text-align: center;
+}
+
+#content {
+    border: 1px solid gray;
+    margin: 20px 375px;
+    padding: 50px 0;
+}
+
+#topics {
+    padding: 0 170px;
+}
+
+hr {
+    border: none;            
+    height: 3px;             
+    background-color: #1E6DB6;  
+    width: 70%;                
+    margin: 20px auto;         
+    border-radius: 2px; 
+}   
+
+p {
+    color:#1E6DB6;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+img {
+    width: 350px;
+}
