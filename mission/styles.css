@@ -2,6 +2,15 @@ body {
     font-family:'Times New Roman', Times, serif; 
     max-width: 650px;
     margin: 0 auto;
+    background-color: white;
+}
+
+body.dark {
+    font-family:'Times New Roman', Times, serif; 
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #333;
+    color: white;
 }
 
 h1 {
@@ -14,7 +23,7 @@ h1 {
 }
 
 h2 {
-    color: #2a5db0;
+    color: #006eb6;
     font-size: 17px;
     text-transform: uppercase;
     text-align: center;
@@ -22,6 +31,9 @@ h2 {
     font-weight:300
 }
 
+.dark h2 {
+    color: #4f9acf;
+}
 main {
     font-size: 22px;
     margin-top: 55px;
