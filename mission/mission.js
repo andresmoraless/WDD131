@@ -10,6 +10,6 @@ if (themeSelector.value === "dark") {
     logo.src = "byui-logo_white.png";
 } else {
     body.classList.remove("dark");
-    logo.src = "logo-blue.png";
+    logo.src = "byui-logo_blue.webp";
 }
 }
