@@ -1,0 +1,113 @@
+:root {
+--primary-color: #52489c;
+--secondary-color: #59c3c3;
+--accent-color: #f45b69;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: 'Mooli';
+}
+
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 1px;
+    box-sizing: border-box;
+    color: white;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "Mooli", sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+
+header h1 {
+    margin: 2rem 0 1.5rem 0;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 5em;
+    font-weight: 400;
+}
+header h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;    
+    gap: 0.5rem;             
+    margin-top: .25rem;
+    margin-bottom: 2rem; 
+}
+  
+nav a{
+    display: block;     
+    text-decoration: underline;
+    color: white;
+    font-size: 1.5em;    
+}
+
+main {
+    background-color: #ebebeb;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+
+img {
+	max-width: 100%;
+    border: 5px solid white;
+    box-shadow: 4px 4px 10px;
+
+}
+
+footer p {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+@media screen and (min-width: 800px) {
+.gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+}
+nav {
+    display: none;
+}
+}
+  
+@media screen and (min-width: 1000px) {
+.gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+#menuButton {
+    display: none;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+}

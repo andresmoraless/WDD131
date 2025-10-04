@@ -5,6 +5,10 @@ body {
     background-color: white;
 }
 
+.box {
+    border: 1px solid black;
+}
+
 body.dark {
     font-family:'Times New Roman', Times, serif; 
     max-width: 650px;
@@ -19,7 +23,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    margin: 100px 0 20px 0;
+    margin: 95px 0 20px 0;
 }
 
 h2 {
