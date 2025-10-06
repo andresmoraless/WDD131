@@ -7,6 +7,7 @@ body {
 
 .box {
     border: 1px solid black;
+    padding: 0 80px;
 }
 
 body.dark {
@@ -38,13 +39,19 @@ h2 {
 .dark h2 {
     color: #4f9acf;
 }
+
+body.dark .box {
+    border: 1px solid white;
+    padding: 0 80px; 
+}
+
 main {
-    font-size: 22px;
+    font-size: 16px;
     margin-top: 55px;
 }
 
 ol li {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 img {
