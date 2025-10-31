@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+  
+  p {
+    margin-bottom: 1em;
+  }
+  
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    border: none;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+  }
+  
+  button[type="submit"] {
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  button[type="reset"] {
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .errors > p {
+    border: 1px solid red;
+    padding: 0.5em;
+  }
+  /* Style the select arrow for Safari */
+  select::-webkit-inner-spin-button,
+  select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Style the select arrow for other browsers */
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .hide {
+    display: none; /* Initially hide the credit card input and label */
+  }
