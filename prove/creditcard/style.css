@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Courier New', monospace;
+    background-color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 17px;
+  }
+  
+  main {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+
+  form {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "front"
+      "back";
+    position: relative;
+  }
+  
+  .card-front,
+  .card-back {
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    background-color: #dcdcdc;
+    padding: 1.5rem;
+  }
+  
+
+  .card-front {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "total image"
+      "number number"
+      "holder expiration";
+    gap: 1rem;
+    width: 380px;
+    height: 250px;
+    z-index: 2;
+    background-color: #ccc;
+    align-items: end;
+  }
+  
+  .card-front .total {
+    align-self: center;
+  }
+  
+  .card-front .card-image {
+    width: 40%;
+    justify-self: end;
+  }
+  
+  .card-front .card-number {
+    grid-area: number;
+  }
+  
+  .card-front .card-holder {
+    grid-area: holder;
+  }
+  
+  .card-front input {
+    width: 100%;
+    padding: 0.4rem;
+    border: 1px solid #555;
+    border-radius: 3px;
+  }
+  .card-front .expiration {
+    grid-area: expiration;
+    display: grid;
+    grid-template-columns: repeat(2, 40px); 
+    grid-auto-rows: auto;
+    column-gap: 0.5rem;
+    align-content: end;              
+    justify-content: start;
+  }
+
+  .card-front .expiration label {
+    grid-column: 1 / -1;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* override the global 100% width on card inputs */
+  .card-front .expiration input {
+    width: 40px;
+    text-align: center;
+    padding: 0.3rem;
+  }
+  
+
+  .card-back {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    width: 380px;
+    height: 250px;
+    position: absolute;
+    top: 40px;
+    left: 205px;
+    background-color: #ccc;
+    z-index: 1;
+  }
+  
+  .black-strip {
+    background-color: #333;
+    height: 40px;
+    width: 107.5%;
+  }
+  
+  .card-back .cvc {
+    justify-self: end;
+    align-self: end;
+    text-align: right;
+  }
+  
+  .card-back label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .card-back input {
+    width: 70px;
+    padding: 0.4rem;
+    border: 1px solid #555;
+    border-radius: 3px;
+  }
+  
+
+  button {
+    justify-self: end;      
+    align-self: end;        
+    background: none;       
+    border: 1px solid #333; 
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    margin-left: 30rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  button:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  
