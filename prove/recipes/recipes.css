@@ -140,6 +140,23 @@ footer {
     .description {
       display: block;
     }
+
+    footer {
+      display: flex;
+      flex-direction: row-reverse; /* ICONS → RIGHT */
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+  
+    footer p {
+      text-align: left;
+      margin: 0;
+    }
+  
+    .social-icons {
+      gap: .75rem;
+    }
 }
   
   
