@@ -83,15 +83,45 @@ const anotherSort = simpleList.sort(compareFn);
 console.log(simpleList);
 
 function searchList(list, query) {
-    function searchCallback(item) {
-        console.log(item);
-        return (
-            item.name.toLowerCase().includes(query.toLowerCase()) ||
-            item.description.toLowerCase().includes(query.toLowerCase()) ||
-            item.tags.find((tag)=>tag.toLowerCase().includes(query.toLowerCase()))
-        );
-    }
-    const filtered = list.filter(searchCallback);
-    console.log(filtered);
+  function searchCallback(item) {
+      return (
+          item.name.toLowerCase().includes(query.toLowerCase()) ||
+          item.description.toLowerCase().includes(query.toLowerCase()) ||
+          item.tags.find(tag =>
+              tag.toLowerCase().includes(query.toLowerCase())
+          )
+      );
+  }
+  const filtered = list.filter(searchCallback);
+
+  const sorted = filtered.sort((a, b) => {
+    const distanceA = parseFloat(a.distance); 
+    const distanceB = parseFloat(b.distance);
+    return distanceA - distanceB;
+  });
+
+  renderHikes(sorted);
 }
-searchList(hikes, "tetons");
+
+function renderHikes(list) {
+  const container = document.querySelector("#hikeList");
+  container.innerHTML = "";
+
+  list.forEach(hike => {
+    const item = document.createElement("div");
+    item.classList.add("hike");
+
+    item.innerHTML = `
+      <h2>${hike.name}</h2>
+      <img src="${hike.imgSrc}" alt="${hike.imgAlt}" width="250">
+      <p><strong>Distance:</strong> ${hike.distance}</p>
+      <p>${hike.description}</p>
+      <p><strong>Tags:</strong> ${hike.tags.join(", ")}</p>
+      <hr>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+searchList(hikes, "al");
