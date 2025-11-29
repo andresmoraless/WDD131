@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects – Andres Morales</title>
+  <style>
+    :root {
+      --bg-main: #f7f6f2;
+      --accent-red: #8b3a3a;
+      --text-dark: #3c3c3c;
+      --nav-text: #444444;
+      --card-bg: #ffffff;
+      --card-radius: 22px;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    /* NAVBAR */
+
+    header {
+      background: #ffffff;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+      padding: 0.75rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      font-weight: 600;
+      color: var(--nav-text);
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--accent-red);
+      border-radius: 999px;
+    }
+
+    /* PAGE LAYOUT */
+
+    main {
+      padding: 2.5rem 4rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .page-header h1 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 2.2rem;
+      color: var(--accent-red);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      max-width: 32rem;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      color: #777777;
+    }
+
+    /* SEARCH + FILTERS */
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #d2d2d2;
+      font-size: 0.95rem;
+      outline: none;
+      background-color: #ffffff;
+    }
+
+    .search-wrapper input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-chip {
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid #d2d2d2;
+      font-size: 0.85rem;
+      background: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .filter-chip.active {
+      background: var(--accent-red);
+      color: #ffffff;
+      border-color: var(--accent-red);
+    }
+
+    /* PROJECT CARDS */
+
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-soft);
+      padding: 1.2rem 1.4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .project-image {
+      height: 150px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #c06c84, #6c5b7b);
+    }
+
+    .project-meta h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-meta p {
+      font-size: 0.95rem;
+      color: #666666;
+      margin-bottom: 0.9rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #e0e0e0;
+      color: #777777;
+    }
+
+    .btn-more {
+      display: inline-block;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent-red);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+    }
+
+    .btn-more:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #dddddd;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777777;
+    }
+
+    .footer-links {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #777777;
+      text-decoration: none;
+      margin: 0 0.4rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-location {
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 0.75rem 1.5rem;
+      }
+      main {
+        padding: 2rem 1.5rem 3rem;
+      }
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+      .project-image {
+        height: 170px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img class="logo" src="images/logo copy.png" alt="personal icon">
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Me</a>
+    <a href="#" class="active">Projects</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Projects</h1>
+    <p>
+      A selection of projects that highlight my work with HTML, CSS, and JavaScript,
+      focused on clean design and user-friendly experiences.
+    </p>
+  </section>
+
+  <section class="controls">
+    <div class="search-wrapper">
+      <input type="text" placeholder="Search projects…" />
+    </div>
+    <div class="filter-row">
+      <span class="filter-chip active">All</span>
+      <span class="filter-chip">HTML &amp; CSS</span>
+      <span class="filter-chip">JavaScript</span>
+    </div>
+  </section>
+
+  <section class="projects-list">
+    <article class="project-card">
+      <div class="project-image"></div>
+      <div class="project-meta">
+        <h2>White Water Rafting Site</h2>
+        <div class="tag-row">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Responsive</span>
+        </div>
+        <p>
+          A responsive marketing website for a white water rafting company, designed
+          with a clean layout, clear calls-to-action, and strong visual hierarchy.
+        </p>
+        <button class="btn-more">More Info</button>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-image"></div>
+      <div class="project-meta">
+        <h2>Family Trips Planner</h2>
+        <div class="tag-row">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+        <p>
+          A concept landing page that organizes family vacation ideas into a simple,
+          easy-to-scan layout with prominent imagery and descriptive sections.
+        </p>
+        <button class="btn-more">More Info</button>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-image"></div>
+      <div class="project-meta">
+        <h2>Recipe Book Layout</h2>
+        <div class="tag-row">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Grid</span>
+        </div>
+        <p>
+          A recipe collection page that uses CSS Grid and thoughtful typography
+          to present recipes in a simple, attractive, and readable format.
+        </p>
+        <button class="btn-more">More Info</button>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Home</a>|
+      <a href="#">About Me</a>
+    </div>
+    <div class="footer-location">BYU–Idaho, Rexburg, Idaho</div>
+    <div>© 2025 Andres Morales</div>
+  </footer>
+</main>
+</body>
+</html>
